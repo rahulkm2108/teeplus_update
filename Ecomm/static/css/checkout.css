@@ -1,0 +1,41 @@
+input#exampleForm2 {
+    height: 34px;
+    border-radius: 4px;
+}
+
+input#exampleForm1 {
+    height: 34px;
+    border-radius: 4px;
+    width: 95%;
+}
+
+
+input#bill_checkout {
+    zoom: 0.8;
+    /*margin-left: 18px;*/
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+    margin-top: 40px;
+}
+
+
+
+button.shipping {
+    /* margin-left: 35%; */
+        padding: 12px;
+            margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+label#label_ship {
+
+    padding-top: 12px;
+    padding-bottom: 3px;
+}
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px){
+  .table-bordered {
+       margin-top: 0px;
+    }
+}

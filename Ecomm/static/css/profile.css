@@ -1,0 +1,314 @@
+div#profile_page {
+    margin-top: 65px;
+}
+.img_sec img {
+    /*padding-left: 53px;*/
+}
+.img_sec h4 {
+    text-align: right;
+}
+.img_sec h2 {
+    text-align: center;
+    padding: 10px 0px;
+}
+p.title {
+    text-align: center;
+}
+.links {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.links a {
+    padding: 0px 12px;
+}
+.img_sec p {
+   /* text-align: center;*/
+    padding-bottom: 10px;
+}
+.img_sec button {
+   background: #9bd044;
+    color: white;
+    padding: 7px 25px;
+    border: none;
+}
+
+
+
+
+
+/*profile data*/
+
+h1.login {
+    text-transform: uppercase;
+}
+
+
+
+.profile_category li {
+    padding: 0px;
+}
+.tab-content{
+    border: 1px solid #ddd;
+    /*padding:12px;*/
+    color: #7e828a;
+    padding: 22px 22px 21px 35px;
+}
+.profile-tab li a {
+    border: none;
+    /*border-right:1px solid #ff5c00;*/
+    border-radius: 0;
+    background: #23323a;
+    color: #fff;
+    margin: 0;
+    padding: 10px 67px;
+    font-size: 13px;
+}
+.profile-tab li a:hover{
+    border: none;
+    /*border-right:1px solid #394d58;*/
+    background: #23323a;
+    color: #fff;
+}
+.profile-tab .profile_category li{
+    margin-right: 0px;
+}
+
+.profile-tab .profile_category li.active a,
+.profile-tab .profile_category li.active a:focus,
+.profile-tab .profile_category li.active a:hover {
+    border: none;
+    color: white;
+    background: #9bd044;;
+}
+.profile-tab li.active > a,
+.profile-tab .profile_category > li.active > a:focus,
+.profile-tab .profile_category > li.active > a:hover {
+    background:#9bd044;
+    color: #fff;
+    border: none;
+}
+.profile-tab  li a{
+    padding:13px 30px;
+    background: #58a189;
+    color: white;
+}
+.profile-tab .tab-content{
+    font-size: 14px;
+    line-height: 26px;
+    color: black;
+}
+.profile-tab .profile_category li a:hover:before,
+.profile-tab .profile_category li.active a:before,
+.profile-tab .profile_category li a:hover:after,
+.profile-tab .profile_category li.active a:after{
+    transform: scale(0);
+}
+.profile-tab .profile_category li a:hover{
+    background: #5aa28a;
+    color: white;
+}
+.profile-tab .profile_category li a{
+    background: #5aa28a;
+    color: white;
+    padding: 15px 25px;
+    font-size: 14px;
+    border-radius: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0;
+    border: none;
+}
+.profile-data {
+    margin: 0px;
+    padding-bottom: 50px;
+}
+/*label.data {
+    color: black;
+}*/
+.Bookings {
+    padding-bottom: 60px;
+}
+.profile1{
+    margin-top: 30px;
+}
+
+.edit-image-view{
+    width: 60%;
+    height: auto;
+    min-height: 208px;
+    /* border: 2px solid #ff0000; */
+    background-image: url(http://localhost/teeplus/assets/images/download3.jpg);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    border-radius: 100%;
+    }
+a.profile-text {
+    color: white;
+    text-decoration: none;
+}
+
+
+.profile-text a:hover{
+    color: white;
+}
+.details {
+    margin-bottom: 28px;
+}
+.prf_details {
+    width: 100%;
+    height: 29px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+.prf_details1 {
+    padding: 31px 128px;
+}
+.tee-gender {
+    width: 14%;
+}
+select#countries {
+    height: 32px;
+}
+select#states {
+    height: 32px;
+}
+.details1 {
+
+    padding: 7px 25px;
+}
+
+.details1_tee a {
+    color: white;
+}
+.backendimage {
+    /*border: 1px solid #ccc;*/
+    /*height: 100px;*/
+    /*width: 100px;*/
+}
+button.details1_tee {
+    padding: 7px 25px;
+    margin-left: 10px;
+    width: 15%;
+}
+
+
+
+
+.profileimg {
+    text-align: -webkit-center;
+}
+label.edt_name {
+    color: black;
+}
+
+
+
+/*order history*/
+
+
+
+.order-Bookings h4 {
+    text-align: center;
+    color: #5b5f6b;
+}
+.order-value h4 {
+    text-align: center;
+}
+.order-value {
+    padding: 15px 0px;
+}
+img.tee-orders {
+
+    height: 70px;
+}
+.order-address {
+    margin: 18px 0px 18px 15px ;
+}
+.imagename h4 {
+    margin: 0px;
+}
+.item-info {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 15px;
+}
+.order-fields h4 {
+    text-align: center;
+}
+.imagename p {
+    font-size: 13px;
+    text-align: justify;
+}
+.item-info h4 {
+    text-align: center;
+}
+
+.order-taxes {
+    text-align: right;
+}
+.order-taxes h5 {
+    margin: 15px 0pc;
+}
+
+
+
+/*ul.order-values {
+    display: inline-flex;
+    padding: 0px;
+}
+.order-values li {
+    list-style: none;
+    padding: 0px 48px;
+}*/
+
+
+
+
+
+
+/*.tee_headered {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+.prof_cont {
+    margin-top: 36px;
+    margin-left: 63px;
+}
+.prf_details1 {
+    margin-left: 43px;
+    width: 50%;
+}
+.prf_details2 {
+    margin-left: 15px;
+    width: 50%;
+}
+.prf_details3 {
+    margin-left: 44px;
+    width: 50%;
+}
+.prf_details4 {
+    margin-left: 41px;
+    width: 50%;
+}
+
+.prf_details5 {
+    margin-left: 5px;
+    width: 50%;
+}
+.prf_details6 {
+    margin-left: 27px;
+    padding: 39px 99px;
+    /* margin-top: -6px;
+}
+
+*/
+
+
+
+
+
+
+
+
+

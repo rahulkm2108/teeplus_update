@@ -1,0 +1,134 @@
+/** {
+  box-sizing: border-box;
+  color: #333;
+}*/
+
+body {
+  /*font-family: "PT Sans";*/
+  background-color: white;
+}
+
+ /*.section {
+
+  position: relative;
+  width: 900px;
+  max-width: 80%;
+ border: 2px solid #333;
+  border-top: none;
+  text-align: center;
+  margin: 113px auto;
+}
+*/
+
+.section h2 {
+  position: relative;
+  margin-top: -14px;
+  display: inline-block;
+  letter-spacing: 1px;
+  color:#3e4095;
+  font-size: 31px;
+    font-weight: 600;
+}
+
+.top-border{
+  position: absolute;
+  height: 2px;
+  width: 24%;
+  background-color: #333;
+}
+
+.right {
+  right: 0;
+}
+
+.left {
+  left: 0;
+}
+
+
+
+.section p {
+ /* width: 61%;*/
+  margin: 20px auto 40px auto;
+  line-height: 30px;
+  color: #1a66ff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+}
+img {
+    vertical-align: middle;
+    /*width: 59%;*/
+
+}
+.image{
+  padding-top: 23px;
+  padding-bottom: 23px;
+}
+.section a {
+    outline: 0;
+    display: inline-block;
+    padding: 10px 18px;
+    margin-bottom: 40px;
+    border-radius: 57px;
+    max-width: 80%;
+    background-color: #8f4498;
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+
+.section a:hover {
+  background-color: #3b9174;
+}
+
+.section a:link, .section a:visited, .section a:link:hover, .section a:visited:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.image img {
+    width: 78%;
+}
+
+@media (max-width: 500px) {
+  .top-border {
+    display: none;
+  }
+  .section {
+  border-top: 2px solid #333;
+  }
+  .section h1 {
+    margin: 0px;
+  }
+  .section h2 {
+    position: relative;
+     margin-top:  12px ;
+    display: inline-block;
+    letter-spacing: 2px;
+    color: #3e4095;
+    font-size: 26px;
+}
+.section a {
+    outline: 0;
+    display: inline-block;
+    padding: 10px 18px;
+    margin-bottom: 40px;
+    border-radius: 57px;
+    max-width: 80%;
+    background-color: #333;
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+}
+
+
+
+

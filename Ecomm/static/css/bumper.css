@@ -1,0 +1,20 @@
+.tee-bumper {
+    text-align: center;
+}
+.tee-bumper img {
+    width: 60%;
+}
+
+
+.centered  h4{
+  position: absolute;
+  top: 11em;
+  left: 17em;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+}
+/*.centered h4 {
+    font-size: 40px;
+    color: white;
+}*/

@@ -1,0 +1,910 @@
+.cart-page {
+    padding: 0px 0px 60px;
+    min-height: 700px;
+    position: relative;
+}
+
+ul.breadcrumb {
+
+    /* padding: 50px 0px; */
+
+    background: none;
+
+    margin-top: 20px;
+
+}
+
+ul.breadcrumb.comb {
+    padding: 8px 15px 8px 0;
+}
+
+.breadcrumb li a {
+    color: #78bd00;
+    font-size: 15px;
+    font-weight: 600;
+	position:relative;
+}
+
+ul.breadcrumb.comb li a:after {
+    content: '';
+    position: absolute;
+    width: 65px;
+    height: 3px;
+    background-color: #722611;
+    left: 0;
+    bottom: -5px;
+}
+
+ul.breadcrumb li+li:before {
+
+    padding: 8px;
+
+    color: black;
+
+    content: "/\00a0";
+
+}
+
+
+
+input#appendedInputButtons5c7cea92f156a5 {
+
+    text-align: center;
+
+}
+
+/*Image*/
+
+
+
+.cart_img img {
+
+    width: 70%;
+
+}
+
+
+
+
+
+/*Header*/
+
+
+
+.info_header h2 {
+
+    margin-bottom: 20px;
+
+}
+
+.info_des p {
+
+    margin-bottom: 20px;
+
+}
+
+.info_quan h4 {
+
+    margin: 18px 0px;
+
+}
+
+/*Size chart*/
+
+
+
+ul.size_chart {
+
+    display: flex;
+
+    padding: 0px;
+
+    margin: 16px 0px;
+
+}
+
+.size_chart li {
+
+   list-style: none;
+
+    padding: 10px 12px;
+
+    border: 1px solid #ccc;
+
+    margin-right: 4px;
+
+    margin-top: 10px;
+
+}
+
+
+
+/*Color*/
+
+
+
+ul.colors {
+
+    /*display: flex;*/
+
+    padding: 0px;
+
+    margin: 16px 0px;
+
+}
+
+.colors li {
+
+    list-style: none;
+
+    margin-top: 12px;
+
+    border: 1px solid #ccc;
+
+    padding: 14px 15px;
+
+    margin-right: 4px;
+
+    float: left;
+
+}
+
+
+
+
+
+/*Quantity*/
+
+
+
+span.select {
+
+    margin-left: 10px;
+
+}
+
+.info_price h3 {
+
+    margin-bottom: 20px;
+
+}
+
+.info_price button {
+
+    background: red;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 80px;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+
+    width: 50%;
+
+}
+
+
+
+
+
+button.add-cart {
+
+    padding: 12px 44px;
+
+    background: #9bd044;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+}
+
+button.add-wish {
+
+    padding: 12px 61px;
+
+    background: #9bd044;
+
+    color: white;
+
+    font-size: 14px;
+
+    margin-left: 4px;
+
+    border: none;
+
+    border-radius: 25px;
+
+}
+
+.btn-minus {
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10px;
+
+
+
+    border: 1px solid gray;
+
+    border-radius: 2px;
+
+    border-right: 0;
+
+}
+
+div.section > div > input {
+
+    margin: 0;
+
+    padding-left: 5px;
+
+    font-size: 12px;
+
+    padding-right: 5px;
+
+    max-width: 8%;
+
+    text-align: center;
+
+}
+
+div.section > div {
+
+    width:100%;
+
+    display:inline-flex;
+
+}
+
+.btn-plus{
+
+    cursor:pointer;
+
+    font-size:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:5px;
+
+    padding-left:10px;
+
+    padding-right:10px;
+
+    border:1px solid gray;
+
+    border-radius:2px;
+
+    border-left:0;
+
+}
+
+.btn-minus:hover{
+
+    background-color:#9bd044;
+
+    border-color:#9bd044;
+
+}
+
+.btn-plus:hover{
+
+    background-color:#9bd044;
+
+    border-color:#9bd044;
+
+}
+
+.info_color h5 {
+
+    font-size: 16px;
+
+}
+
+.info_size h5 {
+
+    font-size: 16px;
+
+}
+
+.info-price h5 {
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+
+    margin-top: 15px;
+
+}
+
+.attr.active,.attr2.active{
+
+ border:1px solid orange;
+
+}
+
+.section h5 {
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+
+    margin-top: 16px;
+
+}
+
+
+
+/* li{ display:inline; }
+
+li: nth-child(3):after {
+
+    content:"\A";
+
+    white-space:pre;
+
+
+
+     }*/
+
+
+
+
+
+
+
+    /* .color2 ul {
+
+    display: inline-flex;
+
+    list-style: none;
+
+}*/
+
+
+
+
+
+/*li.attr {
+
+    margin-right: 5px;
+
+    height: 25px;
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section.tee_description {
+
+    margin-top: 0px;
+
+}
+
+.info1 h4 {
+
+    color: black;
+
+    font-size: 20px;
+
+}
+
+.info1 p {
+
+    text-align: justify;
+
+    color: black;
+
+}
+
+.info2 h4 {
+
+    color: black;
+
+    margin-bottom: 0px;
+
+    margin-top: 16px;
+
+    font-size: 20px;
+
+}
+
+.info2 li {
+
+    color: black;
+
+}
+
+.info2 p {
+
+    color: black;
+
+}
+
+.info3 h4 {
+
+    color: black;
+
+    margin: 0px;
+
+    font-size: 20px;
+
+}
+
+.info3 li {
+
+    color: black;
+
+    list-style: none;
+
+    padding-bottom: 22px;
+
+}
+
+h5.tee-price {
+
+    font-size: 16px;
+
+    margin: 18px 0px;
+
+}
+
+/*.info3 ul {
+
+    padding: 16px;
+
+}*/
+
+.info2 ul {
+
+    padding: 16px;
+
+    margin-bottom: 0px;
+
+}
+
+.info3 ul {
+
+    padding-top: 15px;
+
+}
+
+
+
+/*product description*/
+
+
+
+
+
+.products-des {
+
+    margin-top: 20px;
+
+}
+
+a:hover,a:focus{
+
+    outline: none;
+
+    text-decoration: none;
+
+}
+
+.tab .nav-tabs{
+
+    border-bottom: none;
+
+    position: relative;
+
+}
+
+.tab .nav-tabs li{
+
+    margin-right: 15px;
+
+}
+
+.tab .nav-tabs li a{
+
+    padding: 20px 15px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #25283d;
+
+    background: none;
+
+    border-radius: 0;
+
+    text-transform: uppercase;
+
+    margin-right: 0;
+
+    border: none;
+
+    position: relative;
+
+    transition: all 0.5s ease 0s;
+
+}
+
+.tab .nav-tabs li a:hover{
+
+    background: #fff;
+
+}
+
+.tab .nav-tabs li a:before{
+
+    content: "";
+
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(0,0,0, 0.2);
+
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 0;
+
+    transform: scale(0);
+
+    transition: all 700ms ease 0s;
+
+}
+
+.tab .nav-tabs li a:after{
+
+    content: "";
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: darkmagenta;
+
+    margin: 0 auto;
+
+    position: absolute;
+
+    bottom: 2px;
+
+    left: 0;
+
+    right: 0;
+
+    transform: scale(0);
+
+    transition: all 700ms ease 0s;
+
+}
+
+.tab .nav-tabs li.active a,
+
+.tab .nav-tabs li.active a:focus,
+
+.tab .nav-tabs li.active a:hover{
+
+    border: none;
+
+        color: #f8f8f9;
+
+    background: #9bd044;
+
+}
+
+.tab .nav-tabs li a:hover:before,
+
+.tab .nav-tabs li.active a:before,
+
+.tab .nav-tabs li a:hover:after,
+
+.tab .nav-tabs li.active a:after{
+
+    transform: scale(0);
+
+}
+
+.tab .tab-content{
+
+    padding: 20px;
+
+    background: #fff;
+
+    font-size: 14px;
+
+    color: #a09d9d;
+
+    line-height: 26px;
+
+    border: 1px solid #ccc;
+
+    margin-bottom: 20px;
+
+    border-radius: 5px;
+
+}
+
+.tab .tab-content h3{
+
+    font-size: 24px;
+
+    margin-top: 0;
+
+}
+
+
+
+thead.tbl {
+
+    background: #9bd044;
+
+    color: white;
+
+}
+
+
+
+.shopping {
+
+    background-color: #9bd044;
+
+    border-color: #9bd044;;
+
+
+
+}
+
+.shopping:hover {
+
+    background-color: #9bd044;;
+
+    border-color: #9bd044;;
+
+
+
+}
+
+
+
+
+
+
+
+/*.checkout{
+
+   background-color: #8f4498;
+
+    border-color: #8f4498;
+
+    margin-left: 82px;
+
+
+
+
+
+}*/
+
+
+
+
+
+.checkout {
+
+    background-color: #9bd044;
+
+    border-color: #9bd044;
+
+    margin-left: 74px;
+
+}
+
+.checkout:hover{
+
+   background-color: #9bd044;
+
+    border-color: #9bd044;
+
+
+
+
+
+}
+
+
+
+button.btn-card {
+
+    width: 50%;
+
+    color: white;
+
+    border-radius: 3px;
+
+}
+
+
+
+.wrong  {
+
+    margin-left: 2px;
+
+    padding: 7px 12px;
+
+    border: 1px solid #ccc;
+
+    background-color: #8f4498;
+
+
+
+    border-radius: 3px;
+
+    border-color: #8f4498;
+
+}
+
+
+
+.wrong a {
+
+    color: white;
+
+}
+
+
+
+.update_cart {
+
+
+
+    background-color: #8f4498;
+
+    border-color:#8f4498;
+
+}
+
+
+
+.update_cart:hover {
+
+
+
+    background-color: #8f4498;
+
+    border-color: #8f4498;
+
+}
+
+
+
+.remove_cart {
+
+    background: #5fa68e;
+
+    border-color: #5fa68e;
+
+}
+
+
+
+.remove_cart:hover {
+
+    background: #5fa68e;
+
+    border-color: #5fa68e;
+
+}
+
+
+
+
+
+/*wishlist*/
+
+
+
+
+
+button.com {
+
+    background-color: #9bd044;
+
+    color: white;
+
+    border-color: #9bd044;
+
+    margin-bottom: 13px;
+
+    border: none;
+
+    padding: 9px 12px;
+
+    border-radius: 5px;
+
+}
+
+
+
+button.com:hover {
+
+    background-color: #9bd044;;
+
+    color: white;
+
+    border-color: #9bd044;;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 479px){
+
+    .tab .nav-tabs li{ width: 100%; }
+
+    .tab .nav-tabs li a{ text-align: center; }
+
+}
+
+/*JavaScript (Tab depend on jQuery and Bootstrap.)
+
+1
+
+2
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<<<<<<< HEAD
+
+License Terms*/

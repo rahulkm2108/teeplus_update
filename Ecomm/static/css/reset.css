@@ -1,0 +1,41 @@
+.reg_btn {
+
+    text-align: center;
+}
+div#passwordreset {
+    margin-top: 50px;
+}
+
+label.control-label.col-sm-3.reset {
+    font-size: 11px;
+    padding-left: 22px;
+    margin-top: 15px;
+}
+label.control-label.col-sm-3.new {
+    font-size: 11px;
+    margin-top: 8px;
+}
+label.control-label.col-sm-3.reg {
+    font-size: 11px;
+}
+
+
+.panel-heading.head {
+    background: #3b9174;
+    color: white;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #9bd044;
+    border-color: #9bd044;
+    margin-left: 0px;
+    border-radius: 38px;
+    width: 30%;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #3b9174;
+    border-color:#3b9174 ;
+}

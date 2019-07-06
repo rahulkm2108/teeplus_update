@@ -1,0 +1,25 @@
+.tee-modalheader {
+    background: darkmagenta;
+    padding: 12px;
+}
+h4.tee-modaltitle {
+    color: white;
+    font-size: 18px;
+}
+button.modalwrong {
+    color: white;
+    opacity: 1;
+}
+button.modalwrong:hover {
+    color: white;
+    opacity: 1;
+}
+.tee-modalbody p {
+    font-size: 16px;
+    padding-top: 10px;
+}
+button.modalclose {
+    background: white;
+    border: 2px solid darkmagenta;
+    padding: 7px 20px;
+}

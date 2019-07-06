@@ -1,0 +1,63 @@
+.teehe {
+    background-color: #dfdfdf;
+}
+
+ul.teeinfo {
+    display: inline-flex;
+    list-style: none;
+    padding: 0px;
+        padding-top: 0px;
+    margin-bottom: 2px;
+    padding-top: 4px;
+}
+
+.bulk {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+.info_site {
+    display: inline-flex;
+    list-style: none;
+    padding: 0px;
+    float: right;
+    padding-top: 5px;
+    margin-bottom: 0px;
+}
+
+.info_site li {
+    padding: 0px 15px;
+}
+
+#passrenew {
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.newUser {
+    display: grid;
+}
+
+#register {
+    background: #9bd044;
+    color: white;
+    padding: 6px 47px;
+    font-size: 13px;
+    margin: 5px 0px;
+}
+
+.accu {
+    text-decoration: none;
+    color: black;
+}
+
+.info_site span {
+    font-size: 12px;
+}
+
+#fa_cart {
+    color: black !important;
+    font-size: 15px;
+}

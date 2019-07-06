@@ -1,0 +1,127 @@
+
+
+.error{
+	color:red;
+}
+.error2{
+	color:green;
+}
+.form-type-one{
+    padding: 20px 0px;
+    background-color: #fafbf6;
+    position:relative;
+    background-color: white;
+}
+.form-type-one .form-warp{
+    padding-right: 80px;
+    padding-left: 80px;
+}
+
+.form-type-one .form-card{
+    background-color: #fff;
+    border-radius: 20px;
+    padding-top: 15px;
+       -webkit-box-shadow: 2px 22px 63px -17px rgba(24,139,240,0.62);
+    -moz-box-shadow: 2px 22px 63px -17px rgba(24,139,240,0.62);
+    box-shadow: 2px 22px 63px -17px rgba(24,139,240,0.62);
+}
+.form-type-one .form{
+        padding-left: 15px;
+        padding-right: 15px;
+}
+.form-type-one .form img{
+    text-align: center;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+}
+.form-type-one .form-control {
+    height: 36px;
+    padding: 6px 6px;
+    font-size: 13px;
+    line-height: 1.428571;
+    color: black;
+    background-color: #fff;
+    background-image: none;
+    /*border-image-source: linear-gradient(#4a6917, #4a6917);*/
+    border-width: 1pt;
+    border-image-slice: 1;
+}
+
+.form-type-one label {
+    font-weight: bold;
+    font-size: 13px;
+    font-family: 'Comfortaa';
+    color: black;
+    padding: 5px;
+}
+.btn-success {
+    color: #fff;
+   background-color: darkmagenta;
+    border-color: darkmagenta;
+    margin-left: 24%;
+    border-radius: 38px;
+    width: 50%;
+}
+input#btnSubmit {
+    background-color: #9bd044;
+    border-color: #9bd044;
+}
+.form-type-one h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'Comfortaa';
+    color: darkmagenta;
+    text-align: center;
+}
+.form-type-one p{
+    margin-bottom: 20px;
+    font-family: 'Comfortaa';
+    color: red;
+    text-align: center;
+}
+.art-right{
+    position:absolute;
+    right:0px;
+    bottom: 0px;
+    z-index: 9;
+}
+.art-left{
+    position:absolute;
+    left:0px;
+    bottom: 0px;
+     z-index: 9;
+}
+
+label.req_label:after {
+    content: "*";
+    color:red;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+
+input[type="number"]::-webkit-outer-spin-button {
+
+ -webkit-appearance: none;
+
+ margin: 0;
+
+}
+/*home page*/
+@media screen and (max-width: 768px) {
+    .form-type-one .form-warp{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.nav-tabs>li {
+    margin: 8px;
+}
+.col-md-4.col-sm-4.col-xs-12.search_input {
+    margin-bottom: 12px;
+    margin-top: 12px;
+    }
+    .carousel-inner {
+            margin-top: 12px;
+    }
+
+}

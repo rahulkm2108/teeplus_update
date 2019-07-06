@@ -1,0 +1,72 @@
+input#ccomment {
+    height: 65px;
+  }
+img.logo {
+    width: 100%;
+}
+.contact-section {
+
+   position: relative;
+   width: 900px;
+   max-width: 80%;
+   border: 2px solid #333;
+   border-top: none;
+   text-align: center;
+   margin: 113px auto;
+}
+
+.contact-section h2 {
+   position: relative;
+   margin-top: -14px;
+   display: inline-block;
+   letter-spacing: 1px;
+   color:#ff3434;
+   font-size: 31px;
+   font-weight: 600;
+}
+
+.top-border{
+   position: absolute;
+   height: 2px;
+   width: 24%;
+   background-color: #333;
+}
+
+.right {
+   right: 0;
+}
+
+.left {
+   left: 0;
+}
+
+img.logo {
+    width: 100%;
+}
+
+
+.address {
+    color: #1F3D3D;
+    font-weight: 600;
+}
+.address p {
+    font-size: 15px;
+}
+.cont {
+    padding: 17px 2px 38px;
+}
+a.us {
+    color: #8f4498;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+a.us:hover {
+   color: #1F3D3D;
+}
+
+
+
+
+
+
