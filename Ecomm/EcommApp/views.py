@@ -5,9 +5,12 @@ from django.http import JsonResponse
 from .models import category
 from .models import products
 from .models import customers
+from .models import cart
 from .forms import Login
 from .forms import Registration
 from django.views.decorators.csrf import csrf_exempt
+from django.core import serializers
+import json
 from django.http import HttpResponseRedirect
 # Create your views here.
 @csrf_exempt
@@ -18,9 +21,25 @@ def login(request):
     users = customers.objects.get(Email=uname, Password=password)
 
     if users:
-        return JsonResponse({'response': 'Success', 'user': users.FirstName})
+        return JsonResponse({'response': 'Success', 'user': users.FirstName, 'id': users.id})
     else:
         return JsonResponse({'response': 'Failed'})
+
+@csrf_exempt
+def wishlistData(request):
+    id = request.GET.get('userId')
+    data = cart.objects.filter(customerId_id=id)
+    wishlist_data = []
+    for item in data:
+        pro_info = products.objects.filter(id=item.productId_id).values()
+        wishlist_data.append(pro_info[0])
+        # print(pro_info[0].id)
+    # print(wishlist_data)
+    if data:
+        return JsonResponse({'response': 'Success', 'data': wishlist_data})
+    else:
+        return JsonResponse({'response': 'Failed'})
+
 
 def dashboard(request):
     category.objects.all()
@@ -43,9 +62,11 @@ def dashboard(request):
 def contact_us(request):
     return  render(request, 'contact_us/contact_us.html')
 
-def cart(request):
+def cart_page(request):
     return render(request, 'cart/cart.html')
 
+def wishlist(request):
+    return render(request, 'wishlist/wishlist.html')
 
 def get_product(request, CategoryName):
     category_name = CategoryName

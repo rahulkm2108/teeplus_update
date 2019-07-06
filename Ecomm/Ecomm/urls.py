@@ -24,10 +24,12 @@ urlpatterns = [
 
     path('', views.dashboard, name='dashboard'),
     path('contact_us', views.contact_us, name='contact_us'),
-    path('cart', views.cart, name='cart'),
+    path('cart_page', views.cart, name='cart'),
+    path('wishlist', views.wishlist, name='wishlist'),
     path('registration', views.registration, name='registration'),
     path('products/get_product_category/<CategoryName>', views.get_product, name='get_product'),
     path('login', views.login, name='login'),
+    path('wishlistData', views.wishlistData, name='wishlistData'),
     # url(r'^products/get_product_category/<CategoryName>', views.get_product, name='get_product'),
     path('products/pro_desc/<pro_id>', views.pro_desc, name='pro_desc'),
     path('api-auth/', include('rest_framework.urls')),
