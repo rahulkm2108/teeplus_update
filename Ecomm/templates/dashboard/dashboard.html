@@ -44,9 +44,24 @@
     <link href="{% static 'css/owl.carousel.css'%}" rel="stylesheet">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     {% block javascript %}
     <script>
         $(document).ready(function(){
+            if(Cookies.get("loggedUser") == undefined){
+                $('#userProfile').hide();
+                $('#logginProfile').show();
+            }
+            else{
+                $('#userProfileName').text(Cookies.get('loggedUser'));
+                $('#userProfile').show();
+                $('#logginProfile').hide();
+            }
+            $('#userProfileLogOut').click(function(){
+                Cookies.remove("loggedUser");
+                $('#userProfile').hide();
+                $('#logginProfile').show();
+            })
             $('#loginForm').submit(function(){
                 user = $('#id_username').val();
                 pass = $('#id_password').val();
@@ -56,7 +71,15 @@
                     url: 'login',
                     data: {'username': user, 'password': pass, csrfmiddlewaretoken: '{{ csrf_token }}'},
                     success: function(result) {
-                        alert(result.response)
+                        if(result.response == 'Success'){
+                            Cookies.set('loggedUser', result.user);
+                            $('#userProfileName').text(result.user);
+                            $('#userProfile').show();
+                            $('#logginProfile').hide();
+                        }
+                        else{
+
+                        }
                     }
                 });
                 return false;
@@ -80,7 +103,7 @@
                 <div class="col-md-6 col-xs-12">
                     <div class="teerightmenu">
                         <ul class="info_site">
-                            <li class="dropdown"><a href="" class=" dropdown-toggle" id="login" data-toggle="dropdown">My
+                            <li class="dropdown" id="logginProfile"><a href="" class=" dropdown-toggle" id="login" data-toggle="dropdown">My
                                 Account</a>
 
                                 <!-- <div class="loginBox"> -->
@@ -107,6 +130,13 @@
                                     <label class="newUser"> <span>Register now: </span> <a class="button" id="register"
                                                                                            href="https://teeplusmessage.com/register">New
                                         Customer</a> </label>
+                                </ul>
+                            </li>
+                            <li style="cursor:pointer;" class="dropdown" id="userProfile">
+                                <a class=" dropdown-toggle" data-toggle="dropdown" id="userProfileName"> </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="https://www.teeplusmessage.com/profile">Profile</a></li>
+                                    <li><a id="userProfileLogOut">Logout</a></li>
                                 </ul>
                             </li>
                             <li><a class="accu" href="/contact_us">&nbsp;&nbsp;Contact</a>
@@ -5305,9 +5335,6 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
         crossorigin="anonymous"></script>
 <script>
     var base_url = "https://teeplusmessage.com/";
-    $(document).ready(funtion(){
-        alert(123)
-    })
 </script>
 <!-- javascript -->
 <script src="https://teeplusmessage.com/assets/js/custom.js"></script>

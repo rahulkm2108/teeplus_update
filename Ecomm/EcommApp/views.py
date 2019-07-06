@@ -16,9 +16,11 @@ def login(request):
     password = request.GET.get('password')
     print(uname)
     users = customers.objects.get(Email=uname, Password=password)
-    if users:
-        return JsonResponse({'response': 'Success'})
 
+    if users:
+        return JsonResponse({'response': 'Success', 'user': users.FirstName})
+    else:
+        return JsonResponse({'response': 'Failed'})
 
 def dashboard(request):
     category.objects.all()
