@@ -54,6 +54,7 @@ def updateWishlist(request):
     id = request.GET.get('id')
     loggedUserId = request.GET.get('loggedUserId')
     update = cart.objects.get(id=id)
+
     update.wshishlist = 0
     update.save()
     wishlist_info = cart.objects.filter(customerId_id=loggedUserId)
@@ -176,3 +177,10 @@ def registration(request):
             customer = customers(Email=email, Password=password, FirstName=fname, LastName=lname, PhoneNo=number, DOB='', Address='', Country='', State='', City='', PinCode=500008, Gender='', ProfileImg='', created='2019-01-01 00:00')
             customer.save()
     return render(request, 'registration/registration.html', {'form': form})
+
+
+def profile(request):
+    return render(request, 'profile/profile.html')
+
+def edit_profile(request):
+    return render(request, 'profile/edit_profile.html')

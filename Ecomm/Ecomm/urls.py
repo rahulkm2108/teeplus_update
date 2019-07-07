@@ -40,5 +40,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', TokenObtainPairView.as_view()),
     path('api/token/refresh', TokenRefreshView.as_view()),
-    path('wishlistCount', views.wishlistCount, name='wishlistCount')
+    path('wishlistCount', views.wishlistCount, name='wishlistCount'),
+    path('profile', views.profile, name='profile'),
+    path('edit_profile', views.edit_profile, name='edit_profile')
 ]

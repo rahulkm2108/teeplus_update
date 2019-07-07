@@ -125,6 +125,7 @@
                 Cookies.remove('loggedUserId');
                 $('#userProfile').hide();
                 $('#logginProfile').show();
+                window.location.href="http://127.0.0.1:8000/";
             })
             $('#loginForm').submit(function(){
                 user = $('#id_username').val();
@@ -152,6 +153,73 @@
         })
 
     </script>
+    <script>
+        $(document).ready(function(){
+            if(Cookies.get("loggedUser") == undefined){
+                $('#userProfile').hide();
+                $('#logginProfile').show();
+            }
+            else{
+                $('#userProfileName').text(Cookies.get('loggedUser'));
+                $('#userProfile').show();
+                $('#logginProfile').hide();
+                var userId = Cookies.get('loggedUserId');
+                $.ajax({
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    url: 'wishlistCount',
+                    data: {'userId': userId, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                    success: function(result) {
+                        if(result.response == 'Success'){
+                            $('#wishlistcount').html(result.wishcount)
+                            $('#cartcount').html(result.cartcount)
+                        }
+                    }
+                });
+            }
+            $('#userProfileLogOut').click(function(){
+                Cookies.remove("loggedUser");
+                Cookies.remove("loggedUserId");
+                $('#userProfile').hide();
+                $('#logginProfile').show();
+            })
+            $('#loginForm').submit(function(){
+                user = $('#id_username').val();
+                pass = $('#id_password').val();
+                $.ajax({
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    url: 'login',
+                    data: {'username': user, 'password': pass, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                    success: function(result) {
+                        if(result.response == 'Success'){
+                            Cookies.set('loggedUser', result.user);
+                            Cookies.set('loggedUserId', result.id);
+                            $('#userProfileName').text(result.user);
+                            $('#userProfile').show();
+                            $('#logginProfile').hide();
+                            var userId = Cookies.get('loggedUserId');
+                            $.ajax({
+                                dataType: 'json',
+                                contentType: 'application/json; charset=utf-8',
+                                url: 'wishlistCount',
+                                data: {'userId': userId, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                                success: function(result) {
+                                    if(result.response == 'Success'){
+                                        $('#wishlistcount').html(result.wishcount)
+                                        $('#cartcount').html(result.cartcount)
+                                    }
+                                }
+                            });
+                        }
+                        else{
+                        }
+                    }
+                });
+                return false;
+            })
+        })
+    </script>
     {% endblock %}
 </head>
 <body>
@@ -172,20 +240,49 @@
                 <div class="col-md-6 col-xs-12">
                     <div class="teerightmenu">
                         <ul class="info_site">
-                            <li style="cursor:pointer;" class="dropdown"><a class=" dropdown-toggle"
-                                                                            data-toggle="dropdown">kappu </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="https://www.teeplusmessage.com/profile">Profile</a></li>
-                                    <li><a href="https://www.teeplusmessage.com/logout">Logout</a></li>
+                            <li class="dropdown" id="logginProfile"><a href="" class=" dropdown-toggle" id="login" data-toggle="dropdown">My
+                                Account</a>
+
+                                <!-- <div class="loginBox"> -->
+
+                                <ul class="dropdown-menu ">
+                                    {% csrf_token %}
+                                    <form method="post" id="loginForm">
+
+                                            {{form}}
+<!--                                        <label class="notLast"> <span>E-Mail *</span>-->
+<!--                                            <input type="text" name="email">-->
+<!--                                        </label>-->
+<!--                                        <br>-->
+<!--                                        <label> <span>Password  *</span>-->
+<!--                                            <input type="password" name="password">-->
+<!--                                        </label>-->
+                                        <button class="button" type ="submit" name="login" id="login">Log In</button>
+                                    </form>
+                                    <a class="lockIcon" id="passrenew" href="https://teeplusmessage.com/forget"><i
+                                            class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;Forgot password</a>
+
+                                    <!-- <div class="mandatoryFieldsInfo">* Required fields</div> -->
+
+                                    <label class="newUser"> <span>Register now: </span> <a class="button" id="register"
+                                                                                           href="https://teeplusmessage.com/register">New
+                                        Customer</a> </label>
                                 </ul>
                             </li>
-                            <li><a class="accu" href="https://www.teeplusmessage.com/contact_us">&nbsp;&nbsp;Contact</a>
+                            <li style="cursor:pointer;" class="dropdown" id="userProfile">
+                                <a class=" dropdown-toggle" data-toggle="dropdown" id="userProfileName"> </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="https://www.teeplusmessage.com/profile">Profile</a></li>
+                                    <li><a id="userProfileLogOut">Logout</a></li>
+                                </ul>
                             </li>
-                            <li><a class="accu"
-                                   href="wishlist">&nbsp;&nbsp;Wishilist(<span id="wishlistcount"></span>)</a></li>
+                            <li><a class="accu" href="/contact_us">&nbsp;&nbsp;Contact</a>
+                            </li>
+                            <a href="/wishlist">Wishlist(<span id="wishlistcount"></span>)</a>
                             <li><span><i class="fa fa-shopping-cart" id="fa_cart" aria-hidden="true"></i><a
-                                    href="https://www.teeplusmessage.com/cart" class="head-cart">Cart(5)</a></span></li>
+                                    href="/cart" class="head-cart">Cart(<span id="cartcount"></span>)</a></span></li>
                         </ul>
+                    </div>
                     </div>
                 </div>
             </div>
