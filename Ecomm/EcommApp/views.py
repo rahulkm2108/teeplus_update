@@ -152,14 +152,16 @@ def wishlist(request):
 
 def get_product(request, CategoryName):
     category_name = CategoryName
+    form = Login()
     cat_id = category.objects.get(CategoryName=category_name)
     pro_info = products.objects.filter(categoryId_id=cat_id.id)
-    return render(request, 'products/get_product.html', {'pro_info': pro_info, 'category_name':category_name})
+    return render(request, 'products/get_product.html', {'pro_info': pro_info, 'category_name':category_name, 'form':form})
 
 def pro_desc(request, pro_id):
     pro_info = products.objects.get(id=pro_id)
     # print(pro_info)
-    return render(request, 'products/pro_desc.html', {'data': pro_info})
+    form = Login()
+    return render(request, 'products/pro_desc.html', {'data': pro_info, 'form':form})
 
 def checkout(request):
     return render(request, 'checkout/checkout.html')
