@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main-page.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css'%}">
 
-<!--    <link rel="stylesheet" type="text/css" href="https://teeplusmessage.com/assets/css/profile_style.css">-->
+    <!--    <link rel="stylesheet" type="text/css" href="https://teeplusmessage.com/assets/css/profile_style.css">-->
     <!-- Custom styles for this template -->
     <!-- <link href="https://teeplusmessage.com/assets/css/style.css" rel="stylesheet"> -->
     <!-- <link href="https://teeplusmessage.com/assets/css/style8.css" rel="stylesheet"> -->
@@ -44,6 +44,7 @@
     <link href="{% static 'css/owl.carousel.css'%}" rel="stylesheet">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 </head>
 <body>
 <div class="mainENV topGradient">
@@ -479,6 +480,7 @@
             header2.classList.remove("sticky2");
           }
         }
+
     </script>
     <section class="cart-page">
         <div class="container">
@@ -493,7 +495,57 @@
                                     <li><a href="#"> SHOPPING CART</a></li>
                                 </ul>
                             </div>
+                            <script>
+                                function AssQuan(){
+                                    var quan = $('#appendedInputButtons5c7cf31180a3c9').val();
+                                    $('#appendedInputButtons5c7cf31180a3c9').val(quan - 1);
+                                }
+                                function SubsQuan(){
+                                    var quan = $('#appendedInputButtons5c7cf31180a3c9').val();
+                                    $('#appendedInputButtons5c7cf31180a3c9').val(quan + 1);
+                                }
+                                $(document).ready(function(){
 
+                                    var loggedUserId = Cookies.get('loggedUserId');
+                                    $.ajax({
+                                    dataType: 'json',
+                                    contentType: 'application/json; charset=utf-8',
+                                    url: 'getCartProduct',
+                                    data: {'id': loggedUserId, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                                    success: function(result) {
+                                        if(result.response == 'Success'){
+
+                                            var innerHTML = '';
+                                            for(var i=0;i<result.data.length;i++){
+                                                innerHTML += '<tr>';
+                                                innerHTML += '<td class="text-center">';
+                                                innerHTML += '<a href="products/pro_desc/'+ result.data[i][0].id +'">';
+                                                innerHTML += '<img width="80" src="static/images/'+ result.data[i][0].picture +'"></a>';
+                                                innerHTML += '</td><td class="text-center">';
+                                                innerHTML += '<a href="https://www.teeplusmessage.com/pro_desc/5c7cf31180a3c9">';
+                                                innerHTML += '<strong>'+ result.data[i][0].ProductName +'</strong></a></td>';
+                                                innerHTML += '<td class="text-center">';
+<!--                                                innerHTML += '<a class="btn" href="javascript:void(0)">';-->
+<!--                                                innerHTML += '<i class="fa fa-minus" style="color: #333" onClick="subsQuan()"></i></a>';-->
+                                                innerHTML += '<input class="span1" style="max-width:46px"  placeholder="1" id="appendedInputButtons5c7cf31180a3c9" size="16" type="number" value="1">';
+<!--                                                innerHTML += '<a class="btn" href="javascript:void(0)" onClick="AssQuan()">';-->
+<!--                                                innerHTML += '<i class="fa fa-plus" style="color: #333"></i></a>';-->
+                                                innerHTML += '<input type="hidden" id="max_qtyaa" value="2">';
+                                                innerHTML += '</td><td class="text-center"><strong>$'+ result.data[i][0].UnitPrice +'</strong></td>';
+                                                innerHTML += '<td class="text-center"><strong>$39.9</strong></td>';
+                                                innerHTML += '<td class="text-center">';
+                                                innerHTML += '<button type="button" data-toggle="tooltip" id="5c7cf31180a3c9" class=" remove_cart_login btn btn-danger  " data-original-title="Remove"><i class="fa fa-times-circle"></i></button>';
+                                                innerHTML += '</td></tr>';
+                                            }
+                                            $('#cartPro').append(innerHTML);
+                                        }
+                                        else{
+
+                                        }
+                                    }
+                                });
+                                })
+                            </script>
                             <div class="col-md-12 col-xs-12">
                                 <table class="table table-bordered">
                                     <thead class="tbl">
@@ -507,8 +559,7 @@
                                     </tr>
                                     </thead>
 
-                                    <tbody>
-
+                                    <tbody id="cartPro">
 
                                     </tbody>
                                 </table>
@@ -521,9 +572,8 @@
                                     <a href="https://teeplusmessage.com/products/get_products"
                                        class="btn btn-primary shopping"> Return to shop </a>
                                     <style>
-                    thead.tbl {
-                        display:none;
-                    }
+
+
 
                                     </style>
 
@@ -741,9 +791,11 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
 
 
 
+
     </style>
 
-    <div id="ajaxProcess_waitIcon"><img src="http://teeplusmessage.com/images/ajax-loader.gif" alt="please wait loading ..."></div>
+    <div id="ajaxProcess_waitIcon"><img src="http://teeplusmessage.com/images/ajax-loader.gif"
+                                        alt="please wait loading ..."></div>
     <div id="ADD_TO_BASKET_INFOBOX" style="display:none;"></div>
     <div id="POPUP_TEXTBOX" style="display:none"></div>
 </div>

@@ -24,15 +24,21 @@ urlpatterns = [
 
     path('', views.dashboard, name='dashboard'),
     path('contact_us', views.contact_us, name='contact_us'),
-    path('cart_page', views.cart, name='cart'),
+    path('cart', views.cart_page, name='cart'),
+    path('checkout', views.checkout, name='checkout'),
     path('wishlist', views.wishlist, name='wishlist'),
+    path('getCartProduct', views.getCartProduct, name='getCartProduct'),
+    path('products/pro_desc/AddWishlist', views.AddWishlist, name='AddWishlist'),
+    path('products/pro_desc/AddToCart', views.AddToCart, name='AddToCart'),
     path('registration', views.registration, name='registration'),
     path('products/get_product_category/<CategoryName>', views.get_product, name='get_product'),
     path('login', views.login, name='login'),
     path('wishlistData', views.wishlistData, name='wishlistData'),
+    path('updateWishlist', views.updateWishlist, name='updateWishlist'),
     # url(r'^products/get_product_category/<CategoryName>', views.get_product, name='get_product'),
     path('products/pro_desc/<pro_id>', views.pro_desc, name='pro_desc'),
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', TokenObtainPairView.as_view()),
-    path('api/token/refresh', TokenRefreshView.as_view())
+    path('api/token/refresh', TokenRefreshView.as_view()),
+    path('wishlistCount', views.wishlistCount, name='wishlistCount')
 ]

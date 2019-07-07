@@ -48,7 +48,36 @@
     {% block javascript %}
     <script>
         function cancleWishlist(id){
-            alert(id)
+            var loggedUserId = Cookies.get("loggedUserId");
+            $.ajax({
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                url: 'updateWishlist',
+                data: {'id': id, 'loggedUserId': loggedUserId, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function(result) {
+                    if(result.response == 'Success'){
+                        $('#wishlistcount').html(result.data.length)
+                        $('.tbl1').remove();
+                        var innerHTML = '';
+                        for(var i=0;i<result.data.length;i++){
+                            innerHTML += '<tbody class="tbl1"><tr>';
+                            innerHTML += '<td class="text-center">';
+                            innerHTML += '<a href="">';
+                            innerHTML += '<img class="lap" width="80" src="{{ STATIC_URL }}static/images/'+ result.data[i].picture +'">';
+                            innerHTML += '</a></td><td class="text-center">';
+                            innerHTML += '<a href="" class="cud">'+ result.data[i].ProductName +'</a></td>';
+                            innerHTML += '<td class="text-center">';
+                            innerHTML += '<button type="button" onClick="cancleWishlist('+ result.data[i].id +')" data-wishlistid="291" class=" btn btn-danger btn-sm">Cancel</button>';
+                            innerHTML += '</td></tr></tbody>';
+                        }
+                        $('#wishlistTbl').append(innerHTML)
+                    }
+                    else{
+
+                    }
+                }
+            });
+            return false;
         }
         $(document).ready(function(){
             if(Cookies.get("loggedUser") == undefined){
@@ -70,6 +99,7 @@
                 data: {'userId': userId, csrfmiddlewaretoken: '{{ csrf_token }}'},
                 success: function(result) {
                     if(result.response == 'Success'){
+                        $('#wishlistcount').html(result.data.length)
                         var innerHTML = '';
                         for(var i=0;i<result.data.length;i++){
                             innerHTML += '<tbody class="tbl1"><tr>';
@@ -79,7 +109,7 @@
                             innerHTML += '</a></td><td class="text-center">';
                             innerHTML += '<a href="" class="cud">'+ result.data[i].ProductName +'</a></td>';
                             innerHTML += '<td class="text-center">';
-                            innerHTML += '<button type="button" id="remove_wishlist" onClick="cancleWishlist('+ result.data[i].id +')" data-wishlistid="291" class=" btn btn-danger btn-sm">Cancel</button>';
+                            innerHTML += '<button type="button" onClick="cancleWishlist('+ result.data[i].id +')" data-wishlistid="291" class=" btn btn-danger btn-sm">Cancel</button>';
                             innerHTML += '</td></tr></tbody>';
                         }
                         $('#wishlistTbl').append(innerHTML)
@@ -152,7 +182,7 @@
                             <li><a class="accu" href="https://www.teeplusmessage.com/contact_us">&nbsp;&nbsp;Contact</a>
                             </li>
                             <li><a class="accu"
-                                   href="https://www.teeplusmessage.com/wishlist">&nbsp;&nbsp;Wishilist(3)</a></li>
+                                   href="wishlist">&nbsp;&nbsp;Wishilist(<span id="wishlistcount"></span>)</a></li>
                             <li><span><i class="fa fa-shopping-cart" id="fa_cart" aria-hidden="true"></i><a
                                     href="https://www.teeplusmessage.com/cart" class="head-cart">Cart(5)</a></span></li>
                         </ul>
@@ -615,7 +645,6 @@ function myFunction() {
 
                                     </tr>
                                     </thead>
-
                                 </table>
 
 

@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="book tickets,bus,train,holidays packages,insurance etc.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,16 +15,9 @@
           rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
           type="text/css">
-    <!-- animate css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
     <link rel="stylesheet" type="text/css" href="{% static 'css/main-page.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css'%}">
-
-<!--    <link rel="stylesheet" type="text/css" href="https://teeplusmessage.com/assets/css/profile_style.css">-->
-    <!-- Custom styles for this template -->
-    <!-- <link href="https://teeplusmessage.com/assets/css/style.css" rel="stylesheet"> -->
-    <!-- <link href="https://teeplusmessage.com/assets/css/style8.css" rel="stylesheet"> -->
     <link href="{% static 'css/style2.css'%}" rel="stylesheet">
     <link href="{% static 'css/login.css'%}" rel="stylesheet">
     <link href="{% static 'css/style1.css'%}" rel="stylesheet">
@@ -56,9 +48,23 @@
                 $('#userProfileName').text(Cookies.get('loggedUser'));
                 $('#userProfile').show();
                 $('#logginProfile').hide();
+                var userId = Cookies.get('loggedUserId');
+                $.ajax({
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    url: 'wishlistCount',
+                    data: {'userId': userId, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                    success: function(result) {
+                        if(result.response == 'Success'){
+                            $('#wishlistcount').html(result.wishcount)
+                            $('#cartcount').html(result.cartcount)
+                        }
+                    }
+                });
             }
             $('#userProfileLogOut').click(function(){
                 Cookies.remove("loggedUser");
+                Cookies.remove("loggedUserId");
                 $('#userProfile').hide();
                 $('#logginProfile').show();
             })
@@ -73,12 +79,25 @@
                     success: function(result) {
                         if(result.response == 'Success'){
                             Cookies.set('loggedUser', result.user);
+                            Cookies.set('loggedUserId', result.id);
                             $('#userProfileName').text(result.user);
                             $('#userProfile').show();
                             $('#logginProfile').hide();
+                            var userId = Cookies.get('loggedUserId');
+                            $.ajax({
+                                dataType: 'json',
+                                contentType: 'application/json; charset=utf-8',
+                                url: 'wishlistCount',
+                                data: {'userId': userId, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                                success: function(result) {
+                                    if(result.response == 'Success'){
+                                        $('#wishlistcount').html(result.wishcount)
+                                        $('#cartcount').html(result.cartcount)
+                                    }
+                                }
+                            });
                         }
                         else{
-
                         }
                     }
                 });
@@ -141,9 +160,9 @@
                             </li>
                             <li><a class="accu" href="/contact_us">&nbsp;&nbsp;Contact</a>
                             </li>
-                            <a href="/wishlist">Wishlist(0)</a>
+                            <a href="/wishlist">Wishlist(<span id="wishlistcount"></span>)</a>
                             <li><span><i class="fa fa-shopping-cart" id="fa_cart" aria-hidden="true"></i><a
-                                    href="/cart" class="head-cart">Cart(0)</a></span></li>
+                                    href="/cart" class="head-cart">Cart(<span id="cartcount"></span>)</a></span></li>
                         </ul>
                     </div>
                 </div>
@@ -575,7 +594,6 @@
                     <div class="owl-stage-outer">
                         <div class="owl-stage"
                              style="transform: translate3d(-2300px, 0px, 0px); transition: all 0.25s ease 0s; width: 4140px;">
-
                             {% for item in data%}
                             <div class="owl-item cloned" style="width: 220px; margin-right: 10px;">
                                 <div class="item">
@@ -584,7 +602,22 @@
                                 </div>
                             </div>
                             {% endfor %}
-
+                            {% for item in data%}
+                            <div class="owl-item cloned" style="width: 220px; margin-right: 10px;">
+                                <div class="item">
+                                    <a href="{% url 'get_product' item.CategoryName %}"><img
+                                            src="{{ STATIC_URL }}static/images/{{ item.Picture }}"></a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% for item in data%}
+                            <div class="owl-item cloned" style="width: 220px; margin-right: 10px;">
+                                <div class="item">
+                                    <a href="{% url 'get_product' item.CategoryName %}"><img
+                                            src="{{ STATIC_URL }}static/images/{{ item.Picture }}"></a>
+                                </div>
+                            </div>
+                            {% endfor %}
 
                         </div>
                     </div>
@@ -5074,11 +5107,11 @@
     $(document).ready(function(){
     $('#owl-carousel-mockup4').owlCarousel({
                 autoplay: true,
-                items:8,
+                items:1,
                 loop:true,
-                //startPosition: 1,
-                // autoWidth:true,
-                // dots:false,
+                startPosition: 1,
+                autoWidth:true,
+                dots:false,
                 merge:true,
                 autoplayTimeout: 1500,
                 navigation: true,
@@ -5335,6 +5368,9 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
         crossorigin="anonymous"></script>
 <script>
     var base_url = "https://teeplusmessage.com/";
+    $(document).ready(funtion(){
+        alert(123)
+    })
 </script>
 <!-- javascript -->
 <script src="https://teeplusmessage.com/assets/js/custom.js"></script>
