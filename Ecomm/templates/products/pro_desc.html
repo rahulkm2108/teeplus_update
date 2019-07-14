@@ -95,6 +95,7 @@
         }
       }
 
+
     </script>
     <script>
         $(document).ready(function(){
@@ -166,6 +167,7 @@
             })
         })
 
+
     </script>
 </head>
 <body>
@@ -176,16 +178,15 @@
                 <div class="col-md-6 col-xs-12">
                     <div class="teeme">
                         <ul class="teeinfo">
-
-                            <li><a class="bulk" href="mailto:teeplusmessage@gmail.com"><i class="fa fa-envelope"></i>
-                                teeplusmessage@gmail.com</a></li>
+                            <li><a class="bulk" href="#">Bulk Discounts Contact: teeplusmessage@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="teerightmenu">
                         <ul class="info_site">
-                            <li class="dropdown" id="logginProfile"><a href="" class=" dropdown-toggle" id="login" data-toggle="dropdown">My
+                            <li class="dropdown" id="logginProfile"><a href="" class=" dropdown-toggle" id="login"
+                                                                       data-toggle="dropdown">My
                                 Account</a>
 
                                 <!-- <div class="loginBox"> -->
@@ -194,17 +195,17 @@
                                     {% csrf_token %}
                                     <form method="post" id="loginForm">
 
-                                            {{form}}
-<!--                                        <label class="notLast"> <span>E-Mail *</span>-->
-<!--                                            <input type="text" name="email">-->
-<!--                                        </label>-->
-<!--                                        <br>-->
-<!--                                        <label> <span>Password  *</span>-->
-<!--                                            <input type="password" name="password">-->
-<!--                                        </label>-->
-                                        <button class="button" type ="submit" name="login" id="login">Log In</button>
+                                        {{form}}
+                                        <!--                                        <label class="notLast"> <span>E-Mail *</span>-->
+                                        <!--                                            <input type="text" name="email">-->
+                                        <!--                                        </label>-->
+                                        <!--                                        <br>-->
+                                        <!--                                        <label> <span>Password  *</span>-->
+                                        <!--                                            <input type="password" name="password">-->
+                                        <!--                                        </label>-->
+                                        <button class="button" type="submit" name="login" id="login">Log In</button>
                                     </form>
-                                    <a class="lockIcon" id="passrenew" href="https://teeplusmessage.com/forget"><i
+                                    <a class="lockIcon" id="passrenew" href="/forget"><i
                                             class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;Forgot password</a>
 
                                     <!-- <div class="mandatoryFieldsInfo">* Required fields</div> -->
@@ -217,7 +218,7 @@
                             <li style="cursor:pointer;" class="dropdown" id="userProfile">
                                 <a class=" dropdown-toggle" data-toggle="dropdown" id="userProfileName"> </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="https://www.teeplusmessage.com/profile">Profile</a></li>
+                                    <li><a href="/profile">Profile</a></li>
                                     <li><a id="userProfileLogOut">Logout</a></li>
                                 </ul>
                             </li>
@@ -238,21 +239,14 @@
                 <section class="teelog" style="background-color: white;">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4 col-sm-4 col-xs-12"><a href="https://www.teeplusmessage.com/"><img
+                            <div class="col-md-4 col-sm-4 col-xs-12"><a href="/"><img
                                     class="teeimg" title="Tee Plus Message"
-                                    src="https://www.teeplusmessage.com/assets/images/Teeplusmessage-new (3) logo.png"
-                                    style="height: 90px;" alt="cool tshirt designs"></a></div>
+                                    src="{% static 'images/logo.png' %}"
+                                    style="height: 90px;"></a></div>
                             <div class="col-md-4 col-sm-4 col-xs-12">
-
-                                <!--  <span style="    margin-top: 32px;
-
-                      float: right;"><i class="fa fa-shopping-cart" id="fa_cart" aria-hidden="true"></i>
-
-                                             <a href="https://www.teeplusmessage.com/cart" class="cart_serach">cart(0)</a></span> -->
-
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 search_input">
-                                <form action="https://www.teeplusmessage.com/products/products_search" method="get">
+                                <form action="#" method="get">
                                     <input type="text" placeholder="Enter Keyword(s)" name="search" value=""
                                            required="">
                                     <div class="search">
@@ -526,7 +520,7 @@
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Others</a>
-                                                       <ul class="third-level-menu">
+                                                        <ul class="third-level-menu">
                                                             <li>
                                                                 <a href="#">T-shirts</a>
                                                             </li>
@@ -640,6 +634,7 @@ function myFunction() {
 }
 
 
+
     </script>
 
     <style>
@@ -653,9 +648,8 @@ function myFunction() {
 }
 
 
+
     </style>
-
-
 
 
     <style type="text/css">
@@ -705,6 +699,7 @@ function myFunction() {
     line-height: 32px;
   }
 
+
     </style>
     <section class="tee_products">
         <div class="container">
@@ -727,85 +722,88 @@ function myFunction() {
                         <div class="tile" data-scale="1.6" id="show-img" data-image="">
                             <!-- <img src="image/c1.jpg"> -->
                             <div class="photo"
-                                 style="background-image: url('{{ STATIC_URL }}static/images/{{ data.picture }}');" transform: scale(1); transform-origin: 44.125% 47.25%;"></div>
+                                 style="background-image: url('{{ STATIC_URL }}static/images/{{ data.picture }}');"
+                                 transform: scale(1); transform-origin: 44.125% 47.25%;
+                            ">
                         </div>
-
                     </div>
-                    <!-- <div class="show" href="https://d1yg28hrivmbqm.cloudfront.net/files/4e2/4e2f0b84e78ea0aed99184bf2d45161a_preview.png">
-                       <img src="https://d1yg28hrivmbqm.cloudfront.net/files/4e2/4e2f0b84e78ea0aed99184bf2d45161a_preview.png" id="show-img">
-                     </div> -->
-                    <div class="small-img">
-                        <img src="https://www.teeplusmessage.com/assets/images/left-arrow.png" class="icon-left" alt=""
-                             id="prev-img">
-                        <div class="small-container">
 
-                            <div id="small-img-roll">
-                                <img src="/static/images/{{data.picture}}" class="show-small-img" alt="now"
-                                     style="border: 1px solid rgb(149, 27, 37); padding: 2px;">
-                                <img src="/static/images/{{data.picture}}" class="show-small-img">
-                            </div>
-                        </div>
-                        <img src="https://www.teeplusmessage.com/assets/images/arrowright.png" class="icon-right" alt=""
-                             id="next-img">
-                    </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
-                    <div class="cart_info">
-                        <div class="info_header">
-                            <h2 style="font-size: 25px">{{data.ProductName}}</h2>
+                <!-- <div class="show" href="https://d1yg28hrivmbqm.cloudfront.net/files/4e2/4e2f0b84e78ea0aed99184bf2d45161a_preview.png">
+                   <img src="https://d1yg28hrivmbqm.cloudfront.net/files/4e2/4e2f0b84e78ea0aed99184bf2d45161a_preview.png" id="show-img">
+                 </div> -->
+                <div class="small-img">
+                    <img src="https://www.teeplusmessage.com/assets/images/left-arrow.png" class="icon-left" alt=""
+                         id="prev-img">
+                    <div class="small-container">
+
+                        <div id="small-img-roll">
+                            <img src="/static/images/{{data.picture}}" class="show-small-img" alt="now"
+                                 style="border: 1px solid rgb(149, 27, 37); padding: 2px;">
+                            <img src="/static/images/{{data.picture}}" class="show-small-img">
                         </div>
-                        <!-- <div class="info_des">
-                            <p>All products ship worldwide. Fulfillment location is set based on shipping destination, routing preferences and <a href=""> stock availability.</a></p>
-                        </div> -->
-                        <div class="info_size">
-                            <h5 id="size_label"><b>Choose size</b></h5>
-                            <ul class="size_chart">
-                                <li class="attr2 active" size="11oz">11oz</li>
+                    </div>
+                    <img src="https://www.teeplusmessage.com/assets/images/arrowright.png" class="icon-right" alt=""
+                         id="next-img">
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="cart_info">
+                    <div class="info_header">
+                        <h2 style="font-size: 25px">{{data.ProductName}}</h2>
+                    </div>
+                    <!-- <div class="info_des">
+                        <p>All products ship worldwide. Fulfillment location is set based on shipping destination, routing preferences and <a href=""> stock availability.</a></p>
+                    </div> -->
+                    <div class="info_size">
+                        <h5 id="size_label"><b>Choose size</b></h5>
+                        <ul class="size_chart">
+                            <li class="attr2 active" size="11oz">11oz</li>
+                        </ul>
+                    </div>
+
+                    <div class="row" style="margin-left: 0px;">
+                        <div class="info_color">
+
+                            <ul class="colors">
+
                             </ul>
                         </div>
-
-                        <div class="row" style="margin-left: 0px;">
-                            <div class="info_color">
-
-                                <ul class="colors">
-
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- strat components -->
-                        <!-- Precios -->
-
-                        <h5 class="tee-price"><b>Price</b></h5>
-                        <h3 style="margin-top:0px;" id="show_price">${{data.UnitPrice}}</h3>
-
-
-                        <div class="section" style="padding-bottom:20px;">
-                            <h5><b>Choose quantity</b></h5>
-                            <div>
-                                <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                                <input type="text" disabled="" name="qty" id="qty" value="1">
-                                <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
-                            </div>
-                        </div>
-                        <input type="hidden" id="product_id" value="103748640">
-                        <input type="hidden" id="price" value="9.95">
-                        <input type="hidden" id="id" value="5c7d2f3e48e972">
-                        <input type="hidden" id="image"
-                               value="https://d1yg28hrivmbqm.cloudfront.net/files/4e2/4e2f0b84e78ea0aed99184bf2d45161a_preview.png">
-                        <input type="hidden" id="name" value="You are my brother from another mother- Mug-Inspiration">
-                        <input type="hidden" id="userid" value="">
-                        <!--   <button class=" add_cart" type="submit" >Add to cart<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> </button> -->
-                        <button class="add-cart" onclick="addToCart({{data.id}})">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;Add to cart
-                        </button>
-                        <span><a href="/checkout"><button class=" add-wish"> Checkout</button></a></span>
-                        <span><button class=" add-wish" onclick="addToWishlist({{data.id}})">Wishlist</button></span>
-
                     </div>
+                    <!-- strat components -->
+                    <!-- Precios -->
+
+                    <h5 class="tee-price"><b>Price</b></h5>
+                    <h3 style="margin-top:0px;" id="show_price">${{data.UnitPrice}}</h3>
+
+
+                    <div class="section" style="padding-bottom:20px;">
+                        <h5><b>Choose quantity</b></h5>
+                        <div>
+                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                            <input type="text" disabled="" name="qty" id="qty" value="1">
+                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="product_id" value="103748640">
+                    <input type="hidden" id="price" value="9.95">
+                    <input type="hidden" id="id" value="5c7d2f3e48e972">
+                    <input type="hidden" id="image"
+                           value="https://d1yg28hrivmbqm.cloudfront.net/files/4e2/4e2f0b84e78ea0aed99184bf2d45161a_preview.png">
+                    <input type="hidden" id="name" value="You are my brother from another mother- Mug-Inspiration">
+                    <input type="hidden" id="userid" value="">
+                    <!--   <button class=" add_cart" type="submit" >Add to cart<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> </button> -->
+                    <button class="add-cart" onclick="addToCart({{data.id}})">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;Add to cart
+                    </button>
+                    <span><a href="/checkout"><button class=" add-wish"> Checkout</button></a></span>
+                    <span><button class=" add-wish" onclick="addToWishlist({{data.id}})">Wishlist</button></span>
+
                 </div>
             </div>
         </div>
-    </section>
+</div>
+</section>
 </div>
 
 
@@ -904,43 +902,38 @@ function myFunction() {
 </section>
 <div class="container" id="tee_newsletter">
     <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-5 col-sm-6 col-xs-12">
             <div class="row">
                 <div class="service-providers">
-                    <div class="col-md-12 col-sm-12 col-xs-6 col-xs-12  service1">
-                        <div class="shippingIcons"><a href="https://www.teeplusmessage.com/"> <img class="serve_img"
-                                                                                                   src="https://www.teeplusmessage.com/assets/images/Teeplusmessage-new (3) logo.png"
-                                                                                                   width="100%"
-                                                                                                   alt="cool tshirt designs">
-                        </a></div>
+                    <div class="col-md-8 col-sm-12 col-xs-6 col-xs-12  service1">
+                        <div class="shippingIcons"><a href="/"> <img class="serve_img"
+                                                                     src="https://teeplusmessage.com/assets/images/Teeplusmessage-new (3) logo.png"
+                                                                     width="80%"> </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-9 col-sm-3 col-xs-12">
+        <div class="col-md-7 col-sm-3 col-xs-12">
             <div class="col-md-5 col-sm-6 col-xs-6 service2">
                 <h2 class="tee_sub"><b>Our payment providers</b></h2>
                 <div class="footer_card"><img class="serve_img"
-                                              src="https://www.teeplusmessage.com/assets/images/icon_preview_001- (1).png"
+                                              src="https://teeplusmessage.com/assets/images/icon_preview_001- (1).png"
                                               style="width:50px" alt="PayPal"> <img class="serve_img"
-                                                                                    src="https://www.teeplusmessage.com/assets/images/icon_paypal_fr_be_uk_no-bg.png"
+                                                                                    src="https://teeplusmessage.com/assets/images/icon_paypal_fr_be_uk_no-bg.png"
                                                                                     style="width:50px" alt="PayPal">
-                    <img class="serve_img" src="https://www.teeplusmessage.com/assets/images/New Project (4).png"
+                    <img class="serve_img" src="https://teeplusmessage.com/assets/images/New Project (4).png"
                          style="width:50px" alt="PayPal"> <img class="serve_img"
-                                                               src="https://www.teeplusmessage.com/assets/images/icon_creditcard_no-bg_2.png"
+                                                               src="https://teeplusmessage.com/assets/images/icon_creditcard_no-bg_2.png"
                                                                style="width:50px" alt="Credit Card"></div>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-6  service3">
                 <h2 class="tee_sub"><b>Service and Help</b></h2>
                 <ul class="ftr-mnu">
-                    <li class="ftr-mnu-li"><a href="https://www.teeplusmessage.com/aboutus" title="About Us">About
+                    <li class="ftr-mnu-li"><a href="#" title="About Us">About
                         Us</a></li>
-                    <li class="ftr-mnu-li"><a href="https://www.teeplusmessage.com/contact_us" title="Contact Us">Contact
+                    <li class="ftr-mnu-li"><a href="/contact_us" title="Contact Us">Contact
                         Us</a></li>
-                    <li class="ftr-mnu-li"><a href="https://www.instagram.com/tee_plus_message1/"><img
-                            src="https://www.teeplusmessage.com/assets/images/instagram-logo.png" alt="instagram icon"></a>
-                    </li>
-
                 </ul>
             </div>
         </div>
@@ -951,8 +944,7 @@ function myFunction() {
         <p class="include"></p>
     </div>
     <div class="col-md-4 col-sm-4 col-xs-12">
-        <p class="rights">Copyright © 2019 ,<a href="home"> <b> TeeplusMessage</b></a>. All rights reserved. Powered by
-            <a href="https://www.amazing7.com/" target="_blank"><b>Amazing7studios</b></a></p>
+        <p class="rights">Copyright © 2019 ,<a href="home"> <b> TeeplusMessage</b></a>. All rights reserved.</p>
     </div>
     <div class="col-md-4 col-sm-4 col-xs-12"></div>
 </div>
@@ -965,6 +957,7 @@ var sc_https=1;
 var scJsHost = "https://";
 document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
 "statcounter.com/counter/counter.js'></"+"script>");
+
 
 </script>
 <script type="text/javascript" src="https://statcounter.com/counter/counter.js"></script>
@@ -993,6 +986,7 @@ Analytics"></a></div>
         return true;
 
 }
+
 
 
 </script>
@@ -1099,6 +1093,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
 
 
 
+
 </style>
 
 <div id="ajaxProcess_waitIcon"><img src="images/ajax-loader.gif" alt="please wait loading ..."></div>
@@ -1133,6 +1128,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
 
   gtag('config', 'UA-142222669-1');
 
+
 </script>
 
 <script type="text/javascript">
@@ -1142,6 +1138,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
        });
    });
 
+
 </script>
 
 <script type="text/javascript">
@@ -1150,6 +1147,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
            $('#myModal2').modal('show');
        });
    });
+
 
 </script>
 
@@ -1178,6 +1176,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
     });
 
 
+
 </script>
 
 
@@ -1202,6 +1201,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
       });
     }
     });
+
 
 
 </script>
@@ -1229,6 +1229,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
     });
 
 
+
 </script>
 
 <script type="text/javascript">
@@ -1247,6 +1248,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
         }
       });
     });
+
 
 
 </script>
@@ -1270,6 +1272,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
         }
       });
     });
+
 
 
 </script>
@@ -1297,6 +1300,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
     });
 
 
+
 </script>
 
 <script type="text/javascript">
@@ -1316,6 +1320,7 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
         }
       });
     });
+
 
 
 </script>

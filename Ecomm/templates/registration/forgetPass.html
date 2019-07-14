@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="book tickets,bus,train,holidays packages,insurance etc.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,9 +15,7 @@
           rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
           type="text/css">
-    <!-- animate css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
     <link rel="stylesheet" type="text/css" href="{% static 'css/main-page.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css'%}">
     <link href="{% static 'css/style2.css'%}" rel="stylesheet">
@@ -56,7 +53,7 @@
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
-                    url: '/wishlistCount',
+                    url: 'wishlistCount',
                     data: {'userId': userId, csrfmiddlewaretoken: '{{ csrf_token }}'},
                     success: function(result) {
                         if(result.response == 'Success'){
@@ -80,7 +77,7 @@
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
-                    url: '/login',
+                    url: 'login',
                     data: {'username': user, 'password': pass, csrfmiddlewaretoken: '{{ csrf_token }}'},
                     success: function(result) {
                         if(result.response == 'Success'){
@@ -110,10 +107,10 @@
                 return false;
             })
         })
+
     </script>
     {% endblock %}
 </head>
-
 <body>
 <div class="mainENV topGradient">
     <section class="teehe">
@@ -215,133 +212,133 @@
                                     </div>
                                     <div class="collapse navbar-collapse" id="myNavbar">
                                         <ul class="top-level-menu">
-                                            <li><a href="/">HOME</a></li>
-                                            <li><a href="/aboutus">ABOUT US</a></li>
+                                            <li><a href="https://www.teeplusmessage.com/">HOME</a></li>
+                                            <li><a href="https://www.teeplusmessage.com/aboutus">ABOUT US</a></li>
                                             <li><a href="#">MEN</a>
                                                 <ul class="second-level-menu">
                                                     <li>
-                                                        <a href="/products/get_products_category/Unisex_T-Shirt">T-shirts</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt">T-shirts</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/products/get_products_category/hoodie">Hoodies</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/hoodie">Hoodies</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/products/get_products_category/Tote Bags">Long
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew">Long
                                                             Sleeve T-Shirts</a></li>
                                                     <li><a href="#">Funny</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Funny">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Funny">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Funny">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Love</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Love">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Love">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Love">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Inspiration </a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Inspiration">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Inspiration">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Inspiration">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Leadership</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Leadership">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Leadership">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Leadership">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Motivation</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Motivation">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Motivation">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Motivation">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Patriotism</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Patriotism">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Patriotism">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Patriotism">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Positivity</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Positivity">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Positivity">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Positivit">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Religion</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Religion">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Religion">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Religion">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Others</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Others">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Others">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Long
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Long_Sleeve_Fitted_Crew-_Others">Long
                                                                     Sleeve T-Shirts</a></li>
                                                         </ul>
                                                     </li>
@@ -350,129 +347,129 @@
                                             <li><a href="#">WOMEN</a>
                                                 <ul class="second-level-menu">
                                                     <li>
-                                                        <a href="/products/get_products_category/Unisex_T-Shirt">T-shirts</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt">T-shirts</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/products/get_products_category/Unisex_hoodie-_Positivity">Hoodies</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Positivity">Hoodies</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/products/get_products_category/Crop_Top">Full
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top">Full
                                                             Crop T-Shirts</a></li>
                                                     <li><a href="#">Funny</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Funny">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Funny">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Funny">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Love</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Love">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Love">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Love">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Inspiration </a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Inspiration">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Inspiration">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Inspiration">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Leadership</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Leadership">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Leadership">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Leadership">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Motivation</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Motivation">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Motivation">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Motivation">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Patriotism</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Patriotism">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Patriotism">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Patriotism">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Positivity</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Positivity">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Positivity">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Positivit">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Religion</a>
                                                         <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Religion">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Religion">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Religion">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Others</a>
-                                                       <ul class="third-level-menu">
+                                                        <ul class="third-level-menu">
                                                             <li>
-                                                                <a href="#">T-shirts</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_T-Shirt-_Others">T-shirts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Hoodies</a>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Unisex_hoodie-_Others">Hoodies</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Full
-                                                                    Corp T-Shirts</a></li>
+                                                                <a href="https://www.teeplusmessage.com/products/get_products_category/Crop_Top-_Others">Full
+                                                                    Crop T-Shirts</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -480,60 +477,61 @@
                                             <li><a href="#">KIDS &amp; BABIES</a>
                                                 <ul class="second-level-menu">
                                                     <li>
-                                                        <a href="#">T-Shirts</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt">T-Shirts</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Funny</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-Funny">Funny</a>
 
                                                         <!-- <ul class="third-level-menu">
 
-                                        <li><a href="#">T-shirts</a></li>
+                                                                      <li><a href="#">T-shirts</a></li>
 
-                                    </ul> -->
+                                                                  </ul> -->
 
                                                     </li>
                                                     <li>
-                                                        <a href="#">Love</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-_Love">Love</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Inspiration </a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-_Inspiration">Inspiration </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Leadership</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-Leadership">Leadership</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Motivation</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-Motivation">Motivation</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Patriotism</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-Patriotism">Patriotism</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Positivity</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-Positivity">Positivity</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Religion</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-Religion">Religion</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Others</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/kids_t-shirt-Other">Others</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li><a href="#">ACCESSORIES</a>
                                                 <ul class="second-level-menu">
                                                     <li>
-                                                        <a href="/products/get_products_category/Mug">Mugs</a>
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/Mug">Mugs</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/products/get_products_category/Framed_photo_paper_poster">Photo
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/Framed_photo_paper_poster">Photo
                                                             Frames</a></li>
                                                     <li>
-                                                        <a href="/products/get_products_category/Tote_bag">Tote
+                                                        <a href="https://www.teeplusmessage.com/products/get_products_category/Tote_bag">Tote
                                                             Bags</a></li>
 
                                                     <!--<li><a href="products/get_products">Hats</a></li>-->
 
-                                                    <li><a href="#">Hats</a></li>
-                                                    <li><a href="#">Bumper
+                                                    <li><a href="https://www.teeplusmessage.com/home/comming">Hats</a>
+                                                    </li>
+                                                    <li><a href="https://www.teeplusmessage.com/home/comming">Bumper
                                                         Stickers</a></li>
                                                 </ul>
                                             </li>
@@ -594,142 +592,82 @@ function myFunction() {
 
 
     <!-- content -->
-    <link rel="stylesheet" type="text/css" href="https://www.teeplusmessage.com/assets/css/product_style.css">
-    <section class="products">
+
+    <link rel="stylesheet" href="https://www.teeplusmessage.com/assets/css/forget.css">
+    <div class="form-gap">
         <div class="container">
-            <div class="col-md-3 col-xs-12">
-                <div class="header1">
-                    Products
-                </div>
-                <div>
-                    <ul class="models">
-                        <li><a href="/products/get_product_category/Hoddie">Funny</a>
-                        </li>
-                        <li><a href="/products/get_product_category/May_God_bless_you_always">Inspiration</a>
-                        </li>
-                        <li>
-                            <a href="/products/get_product_category/My_crazy_days_are_over_2NEW">Leader</a>
-                        </li>
-                        <li><a href="/products/get_product_category/May_God_bless_you_always">Love</a></li>
-                        <li><a href="/products/get_product_category/Please_buckle_up_its_the_law">Motivation</a>
-                        </li>
-                        <li><a href="/products/get_product_category/Tote Bags">Patriotism</a>
-                        </li>
-                        <li><a href="/products/get_product_category/Framed Photo Poper poster">Positivity</a>
-                        </li>
-                        <li>
-                            <a href="/products/get_product_category/Kids_T-shirts">Religion</a>
-                        </li>
-                        <li><a href="/products/get_product_category/Unisex T-shirts">Others</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="panel panel-default def">
+                        <div class="panel-body">
+                            <div class="text-center">
+                                <h3><i class="fa fa-lock fa-4x icon" title="Forgot Password"></i></h3>
+                                <h2 class="text-center">Forgot Password?</h2>
+                                <p class="pass">You can reset your password by entering your email here.</p>
 
+                                <div class="panel-body">
 
-            <div class="col-md-9 col-xs-12">
-                <div class="row">
-                    <div class="category">
-                        <ul class="breadcrumb product-bread">
-                            <li><a href="https://www.teeplusmessage.com/">Home</a></li>
-                            <li><a href="https://www.teeplusmessage.com/products/get_products">Products</a></li>
-                            <li><a href="https://www.teeplusmessage.com/products/get_products_category/Tote_bag">{{category_name}}</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    {% for item in pro_info %}
-                    <div class="col-md-4 col-xs-12">
-                        <div class="card">
-                            <div class="box">
-                                <a href="{% url 'pro_desc' item.id %}"><img
-                                        src="{% static 'images' %}/{{item.picture}}"></a>
+                                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+
+                                        <div class=" form-group">
+                                            <div class=" col-md-6 col-xs-12 input-group Forget">
+
+                                                <span class="input-group-addon mail"><i
+                                                        class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                                <input id="email" name="email" placeholder="Email address"
+                                                       class="form-control " type="email" style="margin: 0px;">
+
+                                            </div>
+                                            <label class="error"></label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input name="forget"
+                                                   class=" col-md-6 col-xs-12 btn btn-lg btn-primary prim btn-block"
+                                                   value="Reset Password" type="submit">
+                                        </div>
+
+                                        <input type="hidden" class="hide" name="token" id="token" value="">
+                                    </form>
+
+                                </div>
                             </div>
-                            <h1><a href="https://www.teeplusmessage.com/pro_desc/103732718">{{item.ProductName}}</a>&nbsp;&nbsp;<a style="cursor:pointer;">
-                                <!--<i class="fa fa-heart teeplus-wishicon" aria-hidden="true"></i>--></a></h1>
-                            <p class="start">Starting at</p>
-                            <p class="price"><i class="fa fa-usd" aria-hidden="true"></i>&nbsp;{{item.UnitPrice}}</p>
-
-                            <div>
-                                <a href="{% url 'pro_desc' item.id %}">
-                                    <div class="details">View Details</div>
-                                </a>
-                            </div>
-
-                            <!--<table style="width:10%">
-  										<tr class="info">
-    										<th class="details"><a href="pro_desc/103732718">View Details</a></th>
-  										</tr>
-									</table>-->
-                            <input type="hidden" id="price" value="19.95">
-                            <input type="hidden" id="id" value="103732718">
-                            <input type="hidden" id="image"
-                                   value="https://d1yg28hrivmbqm.cloudfront.net/files/a1e/a1e340b582eff8c31172169c37559c78_preview.png">
-                            <input type="hidden" id="name" value="All-Over Tote (Black)">
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
-
             </div>
-
-            <div class="custom_pagination">
-                <div class
-                "row"="">
-                <div class="col-md-3"></div>
-                <div class="col-md-9">
-                    <ul class="pagination">
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="https://www.teeplusmessage.com/products/get_products_category/Tote_bag?per_page=15"
-                               data-ci-pagination-page="2">2</a></li>
-                        <li><a href="https://www.teeplusmessage.com/products/get_products_category/Tote_bag?per_page=30"
-                               data-ci-pagination-page="3">3</a></li>
-                        <li><a href="https://www.teeplusmessage.com/products/get_products_category/Tote_bag?per_page=15"
-                               data-ci-pagination-page="2">&gt;</a></li>
-                        <li>
-                            <a href="https://www.teeplusmessage.com/products/get_products_category/Tote_bag?per_page=465"
-                               data-ci-pagination-page="32">Last</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
         </div>
+    </div>
 
-</div>
-</section>
 
-<script src="https://www.teeplusmessage.com/assets/js/cart.js"></script>
+    <!-- Footer -->
+    <section class="newsletter">
+        <div class="container">
+            <h3 class="sign_tee"><b>SIGN UP TO OUR NEWSLETTER</b></h3>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-xs-12 news">
 
-<!-- Footer -->
-<section class="newsletter">
-    <div class="container">
-        <h3 class="sign_tee"><b>SIGN UP TO OUR NEWSLETTER</b></h3>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-xs-12 news">
-
-                <div class="news_letter">
-                    <input type="text" class="newtext" id="emali12" name="email"
-                           placeholder="Enter your email address here">
-                    <span class="tee_for">
+                    <div class="news_letter">
+                        <input type="text" class="newtext" id="emali12" name="email"
+                               placeholder="Enter your email address here">
+                        <span class="tee_for">
         <button id="women" class=" newsfeed women bt_tee" title="WOMEN">For Women</button>
         </span> <span>
         <button id="men" class=" newsfeed men bt_tee" title="MEN">For Men</button>
         </span></div>
-            </div>
-            <div class="col-md-12">
-                <p class="newpara news_tee">I would like to receive the regular Teeplus newsletter about garments, photo
-                    gifts and customization. You can unsubscribe at any time by clicking on the unsubscribe link of any
-                    newsletter or by sending an e-mail to service teeplusmessage@.com Further information can be found
-                    under point 5 of the Privacy Policy. Our services are directed at persons aged 18 or over. By
-                    continuing to use our service, you confirm that you are 18 years of age or over ** with orders of a
-                    minimum value of 30 . It is not applicable to shipping and image processing costs, as well as
-                    already reduced products.</p>
+                </div>
+                <div class="col-md-12">
+                    <p class="newpara news_tee">I would like to receive the regular Teeplus newsletter about garments,
+                        photo gifts and customization. You can unsubscribe at any time by clicking on the unsubscribe
+                        link of any newsletter or by sending an e-mail to service teeplusmessage@.com Further
+                        information can be found under point 5 of the Privacy Policy. Our services are directed at
+                        persons aged 18 or over. By continuing to use our service, you confirm that you are 18 years of
+                        age or over ** with orders of a minimum value of 30 . It is not applicable to shipping and image
+                        processing costs, as well as already reduced products.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<div class="container" id="tee_newsletter">
+    </section>
+    <div class="container" id="tee_newsletter">
         <div class="row">
             <div class="col-md-5 col-sm-6 col-xs-12">
                 <div class="row">
@@ -777,8 +715,8 @@ function myFunction() {
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12"></div>
     </div>
-<!-- Default Statcounter code for Tee Plus Message  -->
-<script type="text/javascript">
+    <!-- Default Statcounter code for Tee Plus Message  -->
+    <script type="text/javascript">
 var sc_project=12030153;
 var sc_invisible=0;
 var sc_security="393527b4";
@@ -787,21 +725,21 @@ var scJsHost = "https://";
 document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
 "statcounter.com/counter/counter.js'></"+"script>");
 
-</script>
-<script type="text/javascript" src="https://statcounter.com/counter/counter.js"></script>
-<span class="statcounter"><a class="statcounter" href="http://www.statcounter.com" target="_blank"><img
-        src="https://c.statcounter.com/t.php?sc_project=12030153&amp;java=1&amp;security=393527b4&amp;u1=89EC27F260FC4FF3DAB8AAF52FF974D9&amp;sc_random=0.5538455858863047&amp;jg=690&amp;rr=7.7.5.5.3.3.3.3.1&amp;resolution=1366&amp;h=768&amp;camefrom=https%3A//www.teeplusmessage.com/&amp;u=https%3A//www.teeplusmessage.com/products/get_products_category/Tote_bag&amp;t=Best%20tote%20bags%20%7C%20Tee%20Plus%20Message&amp;rcat=d&amp;rdomo=d&amp;rdomg=690&amp;sc_snum=1&amp;sess=cfa820&amp;p=0"
-        alt="StatCounter - Free Web Tracker and Counter" border="0"></a></span>
+    </script>
+    <script type="text/javascript" src="https://statcounter.com/counter/counter.js"></script>
+    <span class="statcounter"><a class="statcounter" href="http://www.statcounter.com" target="_blank"><img
+            src="https://c.statcounter.com/t.php?sc_project=12030153&amp;java=1&amp;security=393527b4&amp;u1=89EC27F260FC4FF3DAB8AAF52FF974D9&amp;sc_random=0.8171645770774383&amp;jg=38&amp;rr=33.28.20.20.16.15.14.13.10&amp;resolution=1366&amp;h=768&amp;camefrom=https%3A//www.teeplusmessage.com/forget&amp;u=https%3A//www.teeplusmessage.com/forget&amp;t=Forgot%20Password-TeePlus&amp;rcat=r&amp;rdomo=127.0.0.1:8000&amp;rdomg=38&amp;sc_snum=1&amp;sess=1763af&amp;p=0"
+            alt="StatCounter - Free Web Tracker and Counter" border="0"></a></span>
 
-<noscript>
-    <div class="statcounter"><a title="Web Analytics"
-                                href="https://statcounter.com/" target="_blank"><img class="statcounter"
-                                                                                     src="https://c.statcounter.com/12030153/0/393527b4/0/"
-                                                                                     alt="Web
+    <noscript>
+        <div class="statcounter"><a title="Web Analytics"
+                                    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+                                                                                         src="https://c.statcounter.com/12030153/0/393527b4/0/"
+                                                                                         alt="Web
 Analytics"></a></div>
-</noscript>
-<!-- End of Statcounter Code -->
-<script type="text/javascript">
+    </noscript>
+    <!-- End of Statcounter Code -->
+    <script type="text/javascript">
     function validateEmail(email){
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
@@ -816,9 +754,9 @@ Analytics"></a></div>
 }
 
 
-</script>
+    </script>
 
-<style>
+    <style>
 
 /*Globle CSS AK*/
 
@@ -920,11 +858,14 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
 
 
 
-</style>
-
-<div id="ajaxProcess_waitIcon"><img src="images/ajax-loader.gif" alt="please wait loading ..."></div>
-<div id="ADD_TO_BASKET_INFOBOX" style="display:none;"></div>
-<div id="POPUP_TEXTBOX" style="display:none"></div>
+    </style>
+    <!-- Start of  Zendesk Widget script -->
+    <script id="ze-snippet"
+            src="https://static.zdassets.com/ekr/snippet.js?key=7d21564c-5397-4ed3-bd77-610216314077"></script>
+    <!-- End of  Zendesk Widget script -->
+    <div id="ajaxProcess_waitIcon"><img src="images/ajax-loader.gif" alt="please wait loading ..."></div>
+    <div id="ADD_TO_BASKET_INFOBOX" style="display:none;"></div>
+    <div id="POPUP_TEXTBOX" style="display:none"></div>
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -1142,5 +1083,17 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
 </script>
 
 
+<iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="about:blank"
+        __idm_frm__="684" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe>
+<div>
+    <iframe title="Opens a widget where you can chat to one of our agents" id="launcher" tabindex="0"
+            class="zEWidget-launcher zEWidget-launcher--active" __idm_frm__="685"
+            style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition: opacity 250ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, top, bottom; opacity: 1; width: 113px; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px;"></iframe>
+</div>
+<div>
+    <iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget "
+            __idm_frm__="686"
+            style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition: opacity 250ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px;"></iframe>
+</div>
 </body>
 </html>

@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main-page.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css'%}">
 
-<!--    <link rel="stylesheet" type="text/css" href="https://teeplusmessage.com/assets/css/profile_style.css">-->
+    <!--    <link rel="stylesheet" type="text/css" href="https://teeplusmessage.com/assets/css/profile_style.css">-->
     <!-- Custom styles for this template -->
     <!-- <link href="https://teeplusmessage.com/assets/css/style.css" rel="stylesheet"> -->
     <!-- <link href="https://teeplusmessage.com/assets/css/style8.css" rel="stylesheet"> -->
@@ -60,23 +60,26 @@
                 <div class="col-md-6 col-xs-12">
                     <div class="teerightmenu">
                         <ul class="info_site">
-                            <li class="dropdown"><a href="" class=" dropdown-toggle" id="login" data-toggle="dropdown">My
+                            <li class="dropdown" id="logginProfile"><a href="" class=" dropdown-toggle" id="login" data-toggle="dropdown">My
                                 Account</a>
 
                                 <!-- <div class="loginBox"> -->
 
                                 <ul class="dropdown-menu ">
-                                    <form method="post" action="https://teeplusmessage.com/login">
-                                        <label class="notLast"> <span>E-Mail *</span>
-                                            <input type="text" name="email">
-                                        </label>
-                                        <br>
-                                        <label> <span>Password  *</span>
-                                            <input type="password" name="password">
-                                        </label>
-                                        <button class="button" name="login" id="login">Log In</button>
+                                    {% csrf_token %}
+                                    <form method="post" id="loginForm">
+
+                                            {{form}}
+<!--                                        <label class="notLast"> <span>E-Mail *</span>-->
+<!--                                            <input type="text" name="email">-->
+<!--                                        </label>-->
+<!--                                        <br>-->
+<!--                                        <label> <span>Password  *</span>-->
+<!--                                            <input type="password" name="password">-->
+<!--                                        </label>-->
+                                        <button class="button" type ="submit" name="login" id="login">Log In</button>
                                     </form>
-                                    <a class="lockIcon" id="passrenew" href="https://teeplusmessage.com/forget"><i
+                                    <a class="lockIcon" id="passrenew" href="/forget"><i
                                             class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;Forgot password</a>
 
                                     <!-- <div class="mandatoryFieldsInfo">* Required fields</div> -->
@@ -86,11 +89,18 @@
                                         Customer</a> </label>
                                 </ul>
                             </li>
+                            <li style="cursor:pointer;" class="dropdown" id="userProfile">
+                                <a class=" dropdown-toggle" data-toggle="dropdown" id="userProfileName"> </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/profile">Profile</a></li>
+                                    <li><a id="userProfileLogOut">Logout</a></li>
+                                </ul>
+                            </li>
                             <li><a class="accu" href="/contact_us">&nbsp;&nbsp;Contact</a>
                             </li>
-                            <a href="/wishlist">Wishlist(0)</a>
+                            <a href="/wishlist">Wishlist(<span id="wishlistcount"></span>)</a>
                             <li><span><i class="fa fa-shopping-cart" id="fa_cart" aria-hidden="true"></i><a
-                                    href="/cart" class="head-cart">Cart(0)</a></span></li>
+                                    href="/cart" class="head-cart">Cart(<span id="cartcount"></span>)</a></span></li>
                         </ul>
                     </div>
                 </div>
@@ -103,14 +113,14 @@
                 <section class="teelog" style="background-color: white;">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4 col-sm-4 col-xs-12"><a href="https://teeplusmessage.com/"><img
+                            <div class="col-md-4 col-sm-4 col-xs-12"><a href="/"><img
                                     class="teeimg" title="Tee Plus Message"
                                     src="{% static 'images/logo.png' %}"
                                     style="height: 90px;"></a></div>
                             <div class="col-md-4 col-sm-4 col-xs-12">
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 search_input">
-                                <form action="https://teeplusmessage.com/products/products_search" method="get">
+                                <form action="#" method="get">
                                     <input type="text" placeholder="Enter Keyword(s)" name="search" value=""
                                            required="">
                                     <div class="search">
@@ -479,6 +489,7 @@
             header2.classList.remove("sticky2");
           }
         }
+
     </script>
 
     <section class="contact section-padding">
@@ -584,6 +595,7 @@
 
 
 
+
     </script>
 
     <!-- Footer -->
@@ -620,7 +632,7 @@
                 <div class="row">
                     <div class="service-providers">
                         <div class="col-md-8 col-sm-12 col-xs-6 col-xs-12  service1">
-                            <div class="shippingIcons"><a href="https://teeplusmessage.com/"> <img class="serve_img"
+                            <div class="shippingIcons"><a href="/"> <img class="serve_img"
                                                                                                    src="https://teeplusmessage.com/assets/images/Teeplusmessage-new (3) logo.png"
                                                                                                    width="80%"> </a>
                             </div>
@@ -644,9 +656,9 @@
                 <div class="col-md-4 col-sm-6 col-xs-6  service3">
                     <h2 class="tee_sub"><b>Service and Help</b></h2>
                     <ul class="ftr-mnu">
-                        <li class="ftr-mnu-li"><a href="https://teeplusmessage.com/aboutus" title="About Us">About
+                        <li class="ftr-mnu-li"><a href="#" title="About Us">About
                             Us</a></li>
-                        <li class="ftr-mnu-li"><a href="https://teeplusmessage.com/contact_us" title="Contact Us">Contact
+                        <li class="ftr-mnu-li"><a href="/contact_us" title="Contact Us">Contact
                             Us</a></li>
                     </ul>
                 </div>
@@ -658,8 +670,7 @@
             <p class="include"></p>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12">
-            <p class="rights">Copyright © 2019 ,<a href="home"> <b> TeeplusMessage</b></a>. All rights reserved. Powered
-                by <a href="https://www.amazing7.com/" target="_blank"><b>Amazing7studios</b></a></p>
+            <p class="rights">Copyright © 2019 ,<a href="home"> <b> TeeplusMessage</b></a>. All rights reserved.</p>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12"></div>
     </div>
@@ -758,9 +769,11 @@ section.sticky2 {    position: relative;    width: 100%;    z-index: 9999;    to
 
 
 
+
     </style>
 
-    <div id="ajaxProcess_waitIcon"><img src="http://teeplusmessage.com/images/ajax-loader.gif" alt="please wait loading ..."></div>
+    <div id="ajaxProcess_waitIcon"><img src="http://teeplusmessage.com/images/ajax-loader.gif"
+                                        alt="please wait loading ..."></div>
     <div id="ADD_TO_BASKET_INFOBOX" style="display:none;"></div>
     <div id="POPUP_TEXTBOX" style="display:none"></div>
 </div>

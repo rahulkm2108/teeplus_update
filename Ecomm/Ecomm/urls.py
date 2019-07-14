@@ -31,6 +31,7 @@ urlpatterns = [
     path('products/pro_desc/AddWishlist', views.AddWishlist, name='AddWishlist'),
     path('products/pro_desc/AddToCart', views.AddToCart, name='AddToCart'),
     path('registration', views.registration, name='registration'),
+    path('forget', views.forget, name='forget'),
     path('products/get_product_category/<CategoryName>', views.get_product, name='get_product'),
     path('login', views.login, name='login'),
     path('wishlistData', views.wishlistData, name='wishlistData'),

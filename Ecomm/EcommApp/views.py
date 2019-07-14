@@ -181,6 +181,10 @@ def registration(request):
     return render(request, 'registration/registration.html', {'form': form})
 
 
+def forget(request):
+    return render(request, 'registration/forgetPass.html')
+
+
 def profile(request):
     return render(request, 'profile/profile.html')
 
